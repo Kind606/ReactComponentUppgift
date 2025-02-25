@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router";
 import styled, { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styleComponents/globalStyle";
 import { darkTheme, lightTheme } from "./styleComponents/theme";
@@ -34,6 +34,16 @@ const ThemeButton = styled.button`
   cursor: pointer;
 `;
 
+const NavLink = styled(Link)`
+  color: ${({ theme }) => theme.text};
+  text-decoration: none;
+  padding-top: 10px;
+  &:hover {
+    color: red;
+  }
+  padding: ;
+`;
+
 export default function App() {
   const [theme, setTheme] = useState("light");
   const themeToggler = () => {
@@ -46,12 +56,13 @@ export default function App() {
         <GlobalStyles />
         <div>
           <Header>
-            <h1>Test Header</h1>
+            <h1>Catalog</h1>
             <ThemeButton onClick={themeToggler}>Theme</ThemeButton>
           </Header>
           <div style={{ display: "flex", gap: "16px" }}>
             <SideBar>
-              <p>Aside</p>
+              <NavLink to={"/"}>Home</NavLink>
+              <NavLink to={"/About"}>About</NavLink>
             </SideBar>
             <MainContent>
               <Outlet />
