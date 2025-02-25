@@ -1,6 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
+import styled from "styled-components";
 import { fetchCatImages } from "../data";
 import CatCard from "./ForYouPageCard";
+
+const CatList = styled.div`
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  background-color: ${({ theme }) => theme.background};
+  border-radius: 8px;
+`;
 
 export default function ForYouPage() {
   const { isPending, error, data } = useQuery({
@@ -13,10 +22,10 @@ export default function ForYouPage() {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <div>
+    <CatList>
       {data.map((cat) => (
         <CatCard key={cat.id} cat={cat} />
       ))}
-    </div>
+    </CatList>
   );
 }
