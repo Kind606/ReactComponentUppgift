@@ -4,11 +4,27 @@ import styled, { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styleComponents/globalStyle";
 import { darkTheme, lightTheme } from "./styleComponents/theme";
 
+const SideBar = styled.aside`
+  background-color: ${({ theme }) =>
+    theme.background}; // Background color based on theme
+  padding: 40px;
+  width: 200px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+`;
+
 const Header = styled.header`
   background: ${({ theme }) =>
     theme.secondBackground}; // Background changes based on theme
   display: flex;
   justify-content: space-between;
+`;
+
+const MainContent = styled.main`
+  background-color: ${({ theme }) => theme.background};
+  padding: 16px;
+  flex: 1;
 `;
 
 const ThemeButton = styled.button`
@@ -30,15 +46,17 @@ export default function App() {
         <GlobalStyles />
         <div>
           <Header>
-            <h1>Hello World</h1>
+            <h1>Test Header</h1>
             <ThemeButton onClick={themeToggler}>Theme</ThemeButton>
           </Header>
-          <aside>
-            <p>SideBar</p>
-          </aside>
-          <main>
-            <Outlet />
-          </main>
+          <div style={{ display: "flex", gap: "16px" }}>
+            <SideBar>
+              <p>Aside</p>
+            </SideBar>
+            <MainContent>
+              <Outlet />
+            </MainContent>
+          </div>
         </div>
       </>
     </ThemeProvider>
