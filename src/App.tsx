@@ -10,6 +10,13 @@ const Header = styled.header`
   justify-content: space-between;
 `;
 
+const ThemeButton = styled.button`
+  padding: 5px 10px 5px 10px;
+  background: red;
+  border: none;
+  cursor: pointer;
+`;
+
 export default function App() {
   const [theme, setTheme] = useState("light");
   const themeToggler = () => {
@@ -22,6 +29,7 @@ export default function App() {
         <div>
           <Header>
             <h1>Hello World</h1>
+            <ThemeButton onClick={themeToggler}>Theme</ThemeButton>
           </Header>
           <aside>
             <p>SideBar</p>
