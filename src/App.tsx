@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Outlet } from "react-router";
 import styled, { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./styleComponents/globalStyle";
 import { darkTheme, lightTheme } from "./styleComponents/theme";
 
 const Header = styled.header`
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <>
+        <GlobalStyles />
         <div>
           <Header>
             <h1>Hello World</h1>
