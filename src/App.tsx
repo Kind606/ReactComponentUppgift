@@ -61,7 +61,7 @@ export default function App() {
         <GlobalStyles />
         <div>
           <Header>
-            <H1>Catalog</H1>
+            <H1>CATalog</H1>
             <ThemeToggler onToggle={themeToggler} />
           </Header>
           <div style={{ display: "flex", gap: "16px" }}>

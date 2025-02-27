@@ -1,5 +1,5 @@
 
-# Projekt: Miniprojekt 1 - React App 
+# Projekt: Miniprojekt 1 - React App "CATalog"
 
 ## Beskrivning
 
