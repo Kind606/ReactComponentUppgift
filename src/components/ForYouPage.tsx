@@ -7,7 +7,7 @@ import CatCard from "./ForYouPageCard";
 const CatList = styled.div`
   display: flex;
   gap: 16px;
-  padding: 16px;
+  padding: 12px;
   flex-wrap: wrap;
   background-color: ${({ theme }) => theme.background};
   transition: ease-in 150ms;
