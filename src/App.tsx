@@ -42,6 +42,7 @@ const MainContent = styled.main`
   background-color: ${({ theme }) => theme.background};
   min-height: 88vh;
   transition:background ease-in 150ms;
+  width: 100%;
 `;
 
 const NavLink = styled(Link)`

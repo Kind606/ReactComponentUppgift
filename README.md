@@ -10,3 +10,6 @@ Det här projektet är en webapplikation byggd med **React** som använder sig a
 För att kunna köra igång progammet behöver du bara skriva in två saker:
 
 "npm install" och sedan "npm run dev"
+
+#### Demo-link
+
