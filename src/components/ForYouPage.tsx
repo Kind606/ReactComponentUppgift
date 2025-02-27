@@ -10,7 +10,6 @@ const CatList = styled.div`
   padding: 16px;
   flex-wrap: wrap;
   background-color: ${({ theme }) => theme.background};
-  border-radius: 8px;
   transition: ease-in 150ms;
 `;
 

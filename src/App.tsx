@@ -5,6 +5,12 @@ import ThemeToggler from "./components/Themebutton";
 import { GlobalStyles } from "./styleComponents/globalStyle";
 import { darkTheme, lightTheme } from "./styleComponents/theme";
 
+const Container = styled.div`
+position: relative;
+display: flex;
+gap: 16px;
+`
+
 const SideBar = styled.aside`
   background-color: ${({ theme }) => theme.background};
   padding: 40px;
@@ -13,6 +19,11 @@ const SideBar = styled.aside`
   display: flex;
   flex-direction: column;
   transition: ease-in 150ms;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 300px;
+  border-bottom-right-radius: 15px;
 `;
 
 const Header = styled.header`
@@ -28,7 +39,7 @@ const H1 = styled.h1`
 
 const MainContent = styled.main`
   background-color: ${({ theme }) => theme.background};
-  height: 88vh;
+  min-height: 88vh;
   transition:background ease-in 150ms;
 `;
 
@@ -42,6 +53,8 @@ const NavLink = styled(Link)`
   }
   padding: ;
 `;
+
+
 
 const H2 = styled.h2`
   color: ${({ theme }) => theme.secondtext};
@@ -64,7 +77,7 @@ export default function App() {
             <H1>CATalog</H1>
             <ThemeToggler onToggle={themeToggler} />
           </Header>
-          <div style={{ display: "flex", gap: "16px" }}>
+          <Container>
             <SideBar>
               <H2>Links</H2>
               <NavLink to={"/"}>Home</NavLink>
@@ -73,7 +86,7 @@ export default function App() {
             <MainContent>
               <Outlet />
             </MainContent>
-          </div>
+          </Container>
         </div>
       </>
     </ThemeProvider>
