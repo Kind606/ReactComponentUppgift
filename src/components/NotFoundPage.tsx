@@ -7,7 +7,7 @@ const NotFoundStyle = styled.div`
 export default function NotFoundPage() {
   return (
     <NotFoundStyle>
-      <h2>PageNotFound</h2>
+      <p>PageNotFound</p>
     </NotFoundStyle>
   );
 }
