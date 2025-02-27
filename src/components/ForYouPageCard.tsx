@@ -6,7 +6,7 @@ const CardContainer = styled.div`
   background-color: ${({ theme }) => theme.secondBackground};
   border-radius: 8px;
   transition: background-color 0.3s ease;
-
+    transition: ease-in 150ms;
 
   &:hover {
     background-color: ${({ theme }) => theme.hovercolor};
@@ -28,6 +28,7 @@ const StyledLink = styled(Link)`
   color: ${({ theme }) =>
     theme.secondText}; // Ensure text color is theme dependent
   padding: 16px;
+  transition: ease-in 150ms;
 
 
   &:hover h3 {
@@ -47,7 +48,6 @@ export default function CatCard({ cat }: CatCardProps) {
       <StyledLink to={`/`}>
         <CatImage src={cat.url} alt="Cat" />
       </StyledLink>
-      <span>{cat.id}</span>
     </CardContainer>
   );
 }

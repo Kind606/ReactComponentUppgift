@@ -1,5 +1,5 @@
 
-# Projekt: Dynamisk Webapplikation med React
+# Projekt: Miniprojekt 1 - React App 
 
 ## Beskrivning
 

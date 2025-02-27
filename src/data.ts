@@ -1,4 +1,4 @@
-const url = `https://api.thecatapi.com/v1/images/search?limit=10`;
+const url = `https://api.thecatapi.com/v1/images/search?limit=15`;
 const api_key =
   "live_kbKaMUvksQaLngmpVOgjEQNncf1hoStreb16Cb09h2hNylIEbT5HVWIbjWRT7Pns";
 

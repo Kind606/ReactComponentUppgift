@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router";
 import styled, { ThemeProvider } from "styled-components";
+import ThemeToggler from "./components/Themebutton";
 import { GlobalStyles } from "./styleComponents/globalStyle";
 import { darkTheme, lightTheme } from "./styleComponents/theme";
 
@@ -11,45 +12,47 @@ const SideBar = styled.aside`
   color: white;
   display: flex;
   flex-direction: column;
+  transition: ease-in 150ms;
 `;
 
 const Header = styled.header`
   background: ${({ theme }) => theme.secondBackground};
   display: flex;
   justify-content: space-between;
+  transition: background 150ms ease-in;
 `;
 
 const H1 = styled.h1`
-padding: 0px 0px 0px 10px
-`
+  padding: 0px 0px 0px 10px;
+`;
 
 const MainContent = styled.main`
   background-color: ${({ theme }) => theme.background};
-  padding: 16px;
-  flex: 1;
-`;
-
-const ThemeButton = styled.button`
-  background: ${({ theme }) => theme.secondBackground};
-  border: none;
-  cursor: pointer;
-  font-size: 30px;
+  height: 88vh;
+  transition:background ease-in 150ms;
 `;
 
 const NavLink = styled(Link)`
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.secondtext};
   text-decoration: none;
   padding-top: 10px;
+  transition: ease-in 150ms;
   &:hover {
     color: red;
   }
   padding: ;
 `;
 
+const H2 = styled.h2`
+  color: ${({ theme }) => theme.secondtext};
+  transition: ease-in 150ms;
+`;
+
 export default function App() {
   const [theme, setTheme] = useState("light");
+
   const themeToggler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
   return (
@@ -59,10 +62,11 @@ export default function App() {
         <div>
           <Header>
             <H1>Catalog</H1>
-            <ThemeButton onClick={themeToggler}>🌔</ThemeButton>
+            <ThemeToggler onToggle={themeToggler} />
           </Header>
           <div style={{ display: "flex", gap: "16px" }}>
             <SideBar>
+              <H2>Links</H2>
               <NavLink to={"/"}>Home</NavLink>
               <NavLink to={"/About"}>About</NavLink>
             </SideBar>

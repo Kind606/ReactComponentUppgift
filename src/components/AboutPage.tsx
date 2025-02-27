@@ -1,6 +1,12 @@
+import styled from "styled-components";
+
+const AboutCont = styled.div`
+padding: 16px
+`
+
 export default function AboutPage() {
   return (
-    <div>
+    <AboutCont>
       <h2>AboutPage</h2>
       <p>Welcome to Catalog, the ultimate destination for cat lovers! 🐱✨</p>
       <p>
@@ -14,6 +20,6 @@ export default function AboutPage() {
         kittens to majestic adult cats. Catalog is the perfect place to enjoy
         the beauty and charm of cats—one photo at a time.
       </p>
-    </div>
+    </AboutCont>
   );
 }
