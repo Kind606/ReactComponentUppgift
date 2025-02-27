@@ -31,6 +31,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   transition: background 150ms ease-in;
+  height: 12vh;
 `;
 
 const H1 = styled.h1`
