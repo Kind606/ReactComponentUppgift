@@ -5,8 +5,7 @@ import { GlobalStyles } from "./styleComponents/globalStyle";
 import { darkTheme, lightTheme } from "./styleComponents/theme";
 
 const SideBar = styled.aside`
-  background-color: ${({ theme }) =>
-    theme.background}; // Background color based on theme
+  background-color: ${({ theme }) => theme.background};
   padding: 40px;
   width: 200px;
   color: white;
@@ -15,11 +14,14 @@ const SideBar = styled.aside`
 `;
 
 const Header = styled.header`
-  background: ${({ theme }) =>
-    theme.secondBackground}; // Background changes based on theme
+  background: ${({ theme }) => theme.secondBackground};
   display: flex;
   justify-content: space-between;
 `;
+
+const H1 = styled.h1`
+padding: 0px 0px 0px 10px
+`
 
 const MainContent = styled.main`
   background-color: ${({ theme }) => theme.background};
@@ -28,10 +30,10 @@ const MainContent = styled.main`
 `;
 
 const ThemeButton = styled.button`
-  padding: 5px 10px 5px 10px;
-  background: red;
+  background: ${({ theme }) => theme.secondBackground};
   border: none;
   cursor: pointer;
+  font-size: 30px;
 `;
 
 const NavLink = styled(Link)`
@@ -56,8 +58,8 @@ export default function App() {
         <GlobalStyles />
         <div>
           <Header>
-            <h1>Catalog</h1>
-            <ThemeButton onClick={themeToggler}>Theme</ThemeButton>
+            <H1>Catalog</H1>
+            <ThemeButton onClick={themeToggler}>🌔</ThemeButton>
           </Header>
           <div style={{ display: "flex", gap: "16px" }}>
             <SideBar>

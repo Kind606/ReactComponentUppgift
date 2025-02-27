@@ -9,7 +9,7 @@ const CardContainer = styled.div`
 
 
   &:hover {
-    background-color: ${({ theme }) => theme.hoverBackground || "#2e2e2e"};
+    background-color: ${({ theme }) => theme.hovercolor};
   }
 `;
 
